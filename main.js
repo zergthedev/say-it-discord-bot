@@ -14,7 +14,7 @@ client.on('message', message =>{
 	// pomoc
 	if(command === 'say'){
 		const embed = new Discord.MessageEmbed()
-		const desc = args.slice(1).join(' ')
+		const desc = args.slice(0).join(' ')
 		.setDescription(desc)
 		.setColor('#00BE84')
 		message.channel.send(embed)
