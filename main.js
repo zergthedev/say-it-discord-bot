@@ -21,6 +21,6 @@ client.on('message', message =>{
 		.setColor('#00BE84')
 		sayChannel.send(embedSay)
 	}
-});
+})
 
 client.login(process.env.token);
