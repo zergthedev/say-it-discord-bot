@@ -11,15 +11,15 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	
+	let embed = new Discord.MessageEmbed()
+	
 	// say
 	if(command === 'say'){
 		const sayChannel = message.mentions.channels.first();
 		const sayDescription = args.slice(1).join(' ')
-		const embedSay = new Discord.MessageEmbed()
 		.setDescription(sayDescription)
 		.setColor('#00BE84')
 		sayChannel.send(embedSay)
-	}
 });
 
 client.login(process.env.token);
