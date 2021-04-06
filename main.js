@@ -15,10 +15,10 @@ client.on('message', message =>{
 	if(command === 'say'){
 		const sayChannel = message.mentions.channels.first();
 		const sayDescription = args.slice(1).join(' ')
-		const embedPoll = new Discord.MessageEmbed()
+		const embedSay = new Discord.MessageEmbed()
 		.setDescription(sayDescription)
 		.setColor('#00BE84')
-		pollChannel.send(embedPoll)
+		sayChannel.send(embedSay)
 	}
 });
 
