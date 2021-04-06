@@ -11,10 +11,11 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	
-	const embed = new Discord.MessageEmbed()
-	
 	// say
 	if(command === 'say'){
+		//
+		const embed = new Discord.MessageEmbed()
+		//
 		const sayChannel = message.mentions.channels.first();
 		const sayDescription = args.slice(1).join(' ')
 		.setDescription(sayDescription)
