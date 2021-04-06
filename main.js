@@ -4,6 +4,7 @@ const prefix = '.';
 
 client.once('ready', () =>{
 	console.log('Bot is alive!');
+	bot.user.setActivity('SayIt! - .help', {type: 'STREAMING'}).catch(console.error)
 });
 
 client.on('message', message =>{
