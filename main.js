@@ -11,14 +11,15 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	
-	// pomoc
+	// say
 	if(command === 'say'){
-		const embed = new Discord.MessageEmbed()
-		const desc = args.slice(0).join(' ')
-		.setDescription(desc)
+		const sayChannel = message.mentions.channels.first();
+		const sayDescription = args.slice(1).join(' ')
+		const embedPoll = new Discord.MessageEmbed()
+		.setDescription(sayDescription)
 		.setColor('#00BE84')
-		message.channel.send(embed)
-	} 
+		pollChannel.send(embedPoll)
+	}
 });
 
 client.login(process.env.token);
