@@ -11,7 +11,7 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	
-	let embed = new Discord.MessageEmbed()
+	const embed = new Discord.MessageEmbed()
 	
 	// say
 	if(command === 'say'){
