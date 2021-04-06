@@ -13,11 +13,11 @@ client.on('message', message =>{
 	
 	// say
 	if(command === 'say'){
+		const sayChannel = message.mentions.channels.first();
+		const sayDescription = args.slice(1).join(' ')
 		//
 		const embed = new Discord.MessageEmbed()
 		//
-		const sayChannel = message.mentions.channels.first();
-		const sayDescription = args.slice(1).join(' ')
 		.setDescription(sayDescription)
 		.setColor('#00BE84')
 		sayChannel.send(embed)
