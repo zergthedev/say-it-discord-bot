@@ -19,7 +19,7 @@ client.on('message', message =>{
 		const sayDescription = args.slice(1).join(' ')
 		.setDescription(sayDescription)
 		.setColor('#00BE84')
-		sayChannel.send(embedSay)
+		sayChannel.send(embed)
 	}
 })
 
