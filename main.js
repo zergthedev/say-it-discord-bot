@@ -22,6 +22,15 @@ client.on('message', message =>{
 		.setDescription(sayDescription)
 		.setColor('#00BE84')
 		sayChannel.send(embed)
+	} else if(command === 'help'){
+		//
+		const embed = new Discord.MessageEmbed()
+		//
+		.setTitle('Help')
+		.addField('.say', 'Say something, usage: ***.say #channel <message>***.')
+		.addField('.help', 'Help command, shows this.')
+		.setColor('#00BE84')
+		message.channel.send(embed)
 	}
 });
 
