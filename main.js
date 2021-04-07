@@ -14,7 +14,7 @@ client.on('message', message =>{
 	
 	// say
 	if(command === 'say'){
-		let person = message.guild.member
+		let person = member
 		if (member.hasPermission('MANAGE_CHANNELS')) {
 			const sayChannel = message.mentions.channels.first();
 			const sayDescription = args.slice(1).join(' ')
