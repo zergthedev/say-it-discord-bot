@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '.';
+const { Permissions } = require('discord.js');
 
 client.once('ready', () =>{
 	console.log('Bot is alive!');
@@ -14,14 +15,21 @@ client.on('message', message =>{
 	
 	// say
 	if(command === 'say'){
-		const sayChannel = message.mentions.channels.first();
-		const sayDescription = args.slice(1).join(' ')
-		//
-		const embed = new Discord.MessageEmbed()
-		//
-		.setDescription(sayDescription)
-		.setColor('#00BE84')
-		sayChannel.send(embed)
+		if (member.hasPermission('MANAGE_CHANNELS')) {
+			const sayChannel = message.mentions.channels.first();
+			const sayDescription = args.slice(1).join(' ')
+			//
+			const embed = new Discord.MessageEmbed()
+			//
+			.setDescription(sayDescription)
+			.setColor('#00BE84')
+			sayChannel.send(embed)
+		} else {
+			const embed = new Discord.MessageEmbed()
+			.setTitle('Error.')
+			.setDescription("You don't have the following permissions:")
+			.addField('`MANAGE_CHANNELS`')
+		}
 	}
 });
 
