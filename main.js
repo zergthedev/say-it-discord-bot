@@ -36,7 +36,7 @@ client.on('message', message =>{
 		const embed = new Discord.MessageEmbed()
 		//
 		.setTitle('Invite')
-		.setDescription('Invite me with https://discord.com/oauth2/authorize?client_id=828965745471127562&scope=bot&permissions=8')
+		.addField('Invite me with', 'https://discord.com/oauth2/authorize?client_id=828965745471127562&scope=bot&permissions=8')
 		.setColor('#00BE84')
 		message.channel.send(embed)
 	}
