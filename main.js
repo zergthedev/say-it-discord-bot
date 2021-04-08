@@ -29,6 +29,7 @@ client.on('message', message =>{
 		.setTitle('Help')
 		.addField('.say', 'Say something, usage: ***.say #channel <message>***.')
 		.addField('.help', 'Help command, shows this.')
+		.addField('.invite', 'Invite the bot!')
 		.setColor('#00BE84')
 		message.channel.send(embed)
 	} else if(command === 'invite'){
